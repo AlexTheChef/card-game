@@ -30,7 +30,7 @@
   align-items: center;
   width: 100%;
   margin-top: 100px;
-  font-size: larger;
+  font-size: xx-large;
 }
 
 .game{
@@ -54,9 +54,13 @@
 }
 
 .card{
-  width: 150px;
-  height: 150px;
-  background-color: rgb(122, 24, 24);
+  color: red;
+  width: 196px;
+  height: 196px;
+  background-image: url('assets/images/X.png');
+  background-size: contain ;
+  background-repeat: no-repeat ;
+  background-position: center ;
   margin: 20px;
   display: flex;
   align-items: center;

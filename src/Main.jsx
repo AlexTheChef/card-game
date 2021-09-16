@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {images} from "./assets/images/index"
 
 function Main() {
 
@@ -9,7 +10,7 @@ function Main() {
     const [number, setNumber] = useState('')
     const [time, setTime] = useState(0)
     const [start, setStart] = useState(false)
-    const [cardOrientation, setCardOrientation] = useState('Covered')
+    const [cardOrientation, setCardOrientation] = useState('')
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -20,6 +21,10 @@ function Main() {
         setInput2('')
         setGametime(true)
     };
+
+    const flipCard = () => {
+        setCardOrientation(()=> <h1 >FLIPPED</h1>)
+    }
 
     //TIMER =>
 
@@ -88,16 +93,18 @@ function Main() {
             </div>
             <div className={gametime ?"game" : "hidden"}>
                 <div className="game__board">
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
-                    <div className="card" onClick={() => setCardOrientation("Front Facing")}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
                 </div>
             </div>
         </div>
