@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {images} from "./assets/images/index"
+import { images } from "./assets/images/index"
 
 function Main() {
 
@@ -23,7 +23,7 @@ function Main() {
     };
 
     const flipCard = () => {
-        setCardOrientation(()=> <h1 >FLIPPED</h1>)
+        setCardOrientation(() => <h1 >FLIPPED</h1>)
     }
 
     //TIMER =>
@@ -57,7 +57,7 @@ function Main() {
                     </h3>
                 </div>
             </navbar>
-            <div className={gametime ? "hidden" :"login"}>
+            <div className={gametime ? "hidden" : "login"}>
                 <form>
                     <div className="form-group">
                         <small className="form-text">
@@ -91,20 +91,24 @@ function Main() {
                     </div >
                 </form>
             </div>
-            <div className={gametime ?"game" : "hidden"}>
+            <div className={gametime ? "game" : "hidden"}>
                 <div className="game__board">
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
-                    <div className="card" onClick={flipCard}>{cardOrientation}</div>
+                    <div className="card">
+                        {images
+                            .sort(() => Math.random() - 0.5)
+                            .map((element) => {
+                                return (
+                                    <div
+                                        className="card card-blank"
+                                        name={element.name}
+                                        style={{ background: `url(${element.pic})` }}
+                                        check="false"
+                                        
+                                    />
+                                );
+                                
+                            })}
+                    </div>
                 </div>
             </div>
         </div>
